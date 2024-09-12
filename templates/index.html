@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+    </style>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Automated EDA</title>
+</head>
+<body>
+        <div id="main">
+                    <!-- Home Page -->
+        <div class="pages" id="home">
+            <!--        Navigation Bar-->
+        <div class="anim" id="navigation-bar">
+            <div id="navigation-left">
+                <a href="#home" class="logo" ><H1>AUTO</H1><h3>EDA</h3></a>
+            </div>
+            <div id="navigation-right">
+                <a class="navbuttons active" href="#home">Home</a>
+                <a class="navbuttons" href="#features">Features</a>
+                <a class="navbuttons" href="#docs">Docs</a>
+                <a class="navbuttons" href="#contact">Contact</a>
+                <!-- <a href="#aboutus">About us</a> -->
+            </div>
+        </div>
+        <div id="home-heading">
+            <h1 class="anim" id="heading1">Transform Data into Actionable Insights</h1>
+            <h1 class="anim" id="heading2">Your EDA Automation Platform</h1>
+            <h3 class="anim heading-brief">Discover seamless EDA automation and predictive analytics at Automated EDA, empowering users to extract actionable insights from their tabular data with ease.</h3>
+            <br>
+            <a class="anim impbuttons" href="#docs">Read More</a>
+        </div>
+    </div>
+
+    <!-- Features Page -->
+    <div class="pages" id="features">
+        <div id="container">
+            <div id="features-options">
+                <button class="btn" id="btn1">
+                    <h3>Data Cleaning</h3>
+                </button>
+                <button class="btn" id="btn2">
+                    <h3>Correlation Analysis</h3> 
+                </button>
+                <button class="btn" id="btn3">
+                    <h3>Handling Outliers</h3>
+                </button>
+                <button class="btn" id="btn4">
+                    <h3>Insight Generation</h3>
+                </button>
+            </div>
+
+            <div id="featuresDetails">
+                <div class="details" id="detail1">
+                    <h2>Data Cleaning</h2>
+                    <p>Data cleaning is a critical step in the data analysis process, ensuring that the dataset is accurate, complete, and consistent. It involves identifying and rectifying errors, inconsistencies, and missing values that may compromise the quality of the data. Common data quality issues include missing data points, outliers, duplicates, and incorrect data formats. Various data cleaning techniques, such as imputation, outlier detection, and deduplication, are employed to address these issues. By performing thorough data cleaning, analysts can improve the reliability of their analyses and ensure that decisions are based on trustworthy information.</p>
+                </div>
+                <div class="details" id="detail2">
+                    <h2>Correlation Analysis</h2>   
+                        <p>Correlation analysis is a statistical technique used to measure the strength and direction of the relationship between two or more variables. It helps analysts understand how changes in one variable are associated with changes in another variable. Correlation coefficients, such as Pearson correlation coefficient and Spearman rank correlation coefficient, quantify the degree of linear association between variables. Positive correlation indicates that variables move in the same direction, negative correlation indicates that variables move in opposite directions, and zero correlation indicates no relationship. Correlation analysis is valuable in identifying patterns, dependencies, and potential predictive relationships within the data.
+                </div>
+                <div class="details" id="detail3">
+                    <h2>Handling Outliers</h2>
+                        <p>Outliers are data points that significantly deviate from the majority of the dataset, potentially distorting analyses and models. Techniques such as statistical methods and machine learning algorithms help detect outliers. Analysts can then decide whether to transform or remove outliers, though careful consideration is necessary to avoid bias. By appropriately handling outliers, analysts ensure the accuracy and reliability of their analyses and models.</p>
+                </div>
+                <div class="details" id="detail4">
+                    <h2>insight generation</h2>
+                        <p>Insight generation involves extracting valuable insights and actionable conclusions from the data to inform decision-making processes. Through data analysis techniques such as visualization, statistical analysis, and machine learning algorithms, analysts uncover patterns, trends, and relationships within the data. These insights provide stakeholders with a deeper understanding of the underlying factors influencing business outcomes and help identify opportunities for optimization, innovation, and risk mitigation. Effective insight generation enables organizations to make data-driven decisions, improve performance, and stay competitive in today's rapidly evolving landscape.</p>
+                </div>
+            </div>
+    </div>
+</div>
+
+    <!-- Docs Page -->
+    <div class="pages" id="docs">
+        docs
+    </div>
+
+    <!-- Try Page -->
+    <div class="pages" id="try">
+        <div class="trydivs" id="try-left">
+            <form id="uploadForm" action="/submit" method="post" enctype="multipart/form-data">
+                <textarea class="text field" name="expectation" id="expectations" cols="30" placeholder="Enter your Expectations.." rows="10"></textarea>
+                <!-- file upload -->
+                <input type="file" name="file" id="uploadBtn">
+                <label class="field" for="uploadBtn"><i class="ri-upload-cloud-fill"></i>upload CSV file</label>
+                <!-- file upload -->
+                <input class="field" id="submit-button" type="submit" value="Start">
+                <div id="file-list"></div>
+                <hr style="width: 100%;">
+
+                <h3>Provide URL Link Instead</h3>
+                <textarea class="field" name="url_link" id="" cols="30" placeholder="Link to .csv file" rows="10"></textarea>
+            </form>
+        </div>
+
+        <div class="trydivs" id="right">
+            <div id="result">
+                <p id="text"></p>
+                <!-- <embed id="pdf-embed" src="{{ url_for('static', filename='Uni_variate_output1.pdf') }}" width="100%" height="100%" /> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us Page -->
+    <div class="pages" id="contact">
+        <div id="contact-heading">
+            <h1>Let's build</h1>
+            <h1>something</h1>
+            <h1>great together.</h1>
+        </div>
+        <div  id="contact-form">
+            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" >
+                <input type="hidden" name="access_key" value="fd8fe785-c3b0-4bf5-90cc-4229fb79852f">
+                <input class="inputs" name="Name" type="text " placeholder="Name"> 
+                <input class="inputs" name="Email" type="text " placeholder="Email"> 
+                <input class="inputs" name="Phone No" type="text " placeholder="Contact No"> 
+                <textarea class="inputs" placeholder="Message" name="Message" cols="30" rows="10"></textarea>
+                <input id="contactbtn" class="submit" type="submit" name="" >
+            </form>
+        </div>
+        <div id="contact-email">
+            <img src="https://assets-global.website-files.com/5f9897991b1fb993f7587bf8/5f9970cbfaebeb6d4745c7cb_EmailIcon.svg" alt="">
+            <h3>Say Hello</h3>
+            <div id="contact-email-links">
+                <a target = "_blank" href="https://Ranveer072002@gmail.com">Ranveer072002@gmail.com<i class="ri-arrow-right-up-line"></i></a>
+                <a target = "_blank" href="https://Anuj@gmail.com">Anuj@gmail.com<i id="secondlink" class="ri-arrow-right-up-line"></i></a>
+            </div>
+        </div>
+        <div id="contact-socialmedia-section">
+            
+            <div id="socialMediaPlatforms">
+                <button class="socialmedia" id="linkedin">
+                    <i class="ri-linkedin-box-fill"></i>
+                    <p>Linkedin</p>
+                </button>
+                <button class="socialmedia" id="Github">
+                    <i class="ri-github-fill"></i>
+                    <p>Github</p>
+                </button>
+                <button class="socialmedia" id="instagram">
+                    <i class="ri-instagram-line"></i>
+                    <p>instagram</p>
+                </button>
+                <button class="socialmedia" id="discord">
+                    <i class="ri-discord-fill"></i>
+                    <p>Discord</p>
+                </button>
+            </div>
+
+            <div id="socialMediaLinks"></div>
+
+        </div>
+    </div>
+
+    <!--About Us Page-->
+    <!-- <div class="pages" id="aboutus"></div> -->
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

@@ -1,2 +1,2 @@
-# Advanced EDA Tool
+# Automated EDA Tool
  
